@@ -15,19 +15,6 @@ This project was built as a frontend practice application focused on building a 
 - Structure a React project using clean architecture principles
 
 ---
-
-## 🚀 Features
-
-- 🎶 Play / Pause / Next / Previous controls
-- 📊 Track progress bar with time formatting
-- 🔊 Volume control
-- 📂 Create and delete playlists
-- ➕ Add songs to playlists
-- 🔎 Search songs when adding to playlists
-- 💾 Playlist persistence with LocalStorage
-- 🎧 Active track highlighting
-- ⚡ Fast development with Vite
----
 ## 🎯 Focus Areas
 Frontend practice project focused on:
 - React state management (Context API)
