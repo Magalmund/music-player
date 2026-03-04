@@ -1,16 +1,112 @@
-# React + Vite
+# 🎵 Music Player (Vite + React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern music player application built with **Vite** and **React**, featuring playlist management, audio controls, and persistent state using Context API and LocalStorage.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Description
 
-## React Compiler
+This project was built as a frontend practice application focused on building a scalable and maintainable music player architecture using modern React tools.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Manage global application state using Context API
+- Work with the HTML5 Audio API
+- Synchronize UI with real-time audio events
+- Implement dynamic playlists with persistent storage
+- Structure a React project using clean architecture principles
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- 🎶 Play / Pause / Next / Previous controls
+- 📊 Track progress bar with time formatting
+- 🔊 Volume control
+- 📂 Create and delete playlists
+- ➕ Add songs to playlists
+- 🔎 Search songs when adding to playlists
+- 💾 Playlist persistence with LocalStorage
+- 🎧 Active track highlighting
+- ⚡ Fast development with Vite
+---
+## 🎯 Focus Areas
+Frontend practice project focused on:
+- React state management (Context API)
+- Custom hook architecture
+- Audio element synchronization
+- Component-driven architecture
+- LocalStorage persistence
+- Interactive UI development
+- Clean and maintainable structure
+---
+## 🧠 Architecture Overview
+### 🔹 Global State (MusicContext)
+Centralized state management for:
+- Current track
+- Playback state
+- Track progress & duration
+- Volume control
+- Playlists
+- Song library
+
+Uses lazy initialization for restoring playlists from LocalStorage.
+
+---
+
+### 🔹 Audio Handling
+The application:
+- Uses useRef to control the <audio> element 
+- Listens to:
+  - loadedmetadata
+  - timeupdate
+  - ended
+- Implements custom progress bar logic
+- Synchronizes UI and playback state
+---
+🔹 Playlist System:
+- Dynamic playlist creation
+- Search-based song addition
+- Persistent storage via LocalStorage
+- Active track highlighting
+---
+### 👨‍💻 Main Goals:
+Frontend practice project focused on:
+- Ability to manage complex UI state
+- Understanding of React rendering lifecycle
+- Experience with browser APIs
+- Component reusability patterns
+- Clean folder structure
+- Practical frontend problem solving
+---
+
+## 🛠 Tech Stack
+
+- **Vite**
+- **React**
+- **React Router**
+- **Context API**
+- **HTML5 Audio API**
+- **LocalStorage**
+- JavaScript (ES6+)
+- CSS3
+
+---
+
+## ⚙️ Installation & Setup
+
+1️⃣ Clone the repository:
+
+```bash
+git clone https://github.com/username/music-player.git
+```
+2️⃣ Install dependencies
+```bash
+npm install
+```
+3️⃣ Start development server
+```bash
+npm run dev
+```
+The app runs at:
+```bash
+http://localhost:5173/
+```
