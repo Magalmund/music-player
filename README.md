@@ -4,6 +4,11 @@ A modern music player application built with **Vite** and **React**, featuring p
 
 ---
 
+## 🌐 Live Demo
+[View live site](https://music-player-magalmund.vercel.app/)
+
+---
+
 ## 📌 Description
 
 This project was built as a frontend practice application focused on building a scalable and maintainable music player architecture using modern React tools.
