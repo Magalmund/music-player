@@ -31,34 +31,62 @@ Frontend practice project focused on:
 - Clean and maintainable structure
 ---
 ## 🧠 Architecture Overview
-### 🔹 Global State (MusicContext)
-Centralized state management for:
-- Current track
-- Playback state
-- Track progress & duration
-- Volume control
-- Playlists
-- Song library
+The project is organized with a feature-sliced structure:
 
-Uses lazy initialization for restoring playlists from LocalStorage.
+```text
+src/
+├── app/        # App composition, providers, layout, routing
+├── pages/      # Route-level pages
+├── widgets/    # Large reusable UI blocks
+├── features/   # User actions and business features
+├── entities/   # Domain models: player, playlist, song, track
+└── shared/     # Shared UI, formatters, storage helpers
+```
+
+### 🔹 Application Layer
+
+- `src/app/App.jsx` composes providers, layout, and routes
+- `src/app/providers` connects global providers
+- `src/app/router` defines lazy-loaded application routes
+- `src/app/layout` contains the app shell and navigation
+
+### 🔹 State Management
+The app uses Context API split by domain:
+
+- `PlaybackProvider` manages current track and playback state
+- `LibraryProvider` manages playlists and LocalStorage synchronization
+
+Playlist data is restored from LocalStorage on initialization and persisted after updates.
 
 ---
 
 ### 🔹 Audio Handling
 The application:
-- Uses useRef to control the <audio> element 
+- Uses a dedicated player widget and player entity UI 
 - Listens to:
   - loadedmetadata
   - timeupdate
   - ended
 - Implements custom progress bar logic
 - Synchronizes UI and playback state
+
 ---
+
 🔹 Playlist System:
 - Dynamic playlist creation
 - Search-based song addition
 - Persistent storage via LocalStorage
 - Active track highlighting
+
+---
+
+### 🔹 Routing
+Routes are handled by React Router:
+- `/` - songs page
+- `/playlist` - playlists page
+
+Pages are loaded lazily with `React.lazy` and `Suspense`.
+
 ---
 ### 👨‍💻 Main Goals:
 Frontend practice project focused on:
@@ -73,8 +101,8 @@ Frontend practice project focused on:
 ## 🛠 Tech Stack
 
 - **Vite**
-- **React**
-- **React Router**
+- **React 19**
+- **React Router 7**
 - **Context API**
 - **HTML5 Audio API**
 - **LocalStorage**
