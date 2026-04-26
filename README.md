@@ -5,7 +5,7 @@ A modern music player application built with **Vite** and **React**, featuring p
 ---
 
 ## 🌐 Live Demo
-[View live site](https://music-player-magalmund.vercel.app/)
+[View live site](https://music-player-neo.vercel.app)
 
 ---
 
