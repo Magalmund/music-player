@@ -27,12 +27,15 @@
 
 html {
     scrollbar-color: #2a3039 #121419;
+    background-color: #08090b;
 }
 
 body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    min-height: 100svh;
+    background-color: #08090b;
     background:
         radial-gradient(circle at top left, rgba(90, 96, 110, 0.14), transparent 30%),
         radial-gradient(circle at bottom right, rgba(70, 74, 82, 0.16), transparent 28%),
@@ -50,12 +53,16 @@ button {
 
 #root {
     min-height: 100vh;
+    min-height: 100svh;
+    background: inherit;
 }
 
 .app {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     overflow: hidden;
+    background: inherit;
 }
 
 .background-orb {

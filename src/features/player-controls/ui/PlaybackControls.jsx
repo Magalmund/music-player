@@ -1,5 +1,6 @@
 import {PlayerControls, usePlayback} from "@/entities/player/index.js";
 import {getSongsCount} from "@/entities/song/index.js";
+import {Play, Pause} from 'lucide-react'
 
 const PlaybackControls = () => {
     const {currentTrack, isPlaying, togglePlay, nextTrack, prevTrack} = usePlayback();
@@ -10,7 +11,7 @@ const PlaybackControls = () => {
     return (
         <PlayerControls
             isPlaying={isPlaying}
-            actionIcon={isPlaying ? "⏸" : "▶"}
+            actionIcon={isPlaying ? <Pause /> : <Play />}
             onTogglePlay={togglePlay}
             onNext={nextTrack}
             onPrev={prevTrack}

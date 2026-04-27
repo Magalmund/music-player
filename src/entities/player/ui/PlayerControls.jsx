@@ -1,4 +1,5 @@
 import React, {memo} from 'react';
+import {SkipBack, SkipForward} from "lucide-react";
 
 const PlayerControls = memo(function PlayerControls({
                                                         isPlaying,
@@ -18,7 +19,7 @@ const PlayerControls = memo(function PlayerControls({
                 aria-label="Previous track"
                 disabled={disabled || !canGoPrev}
             >
-                ⏮
+                <SkipBack />
             </button>
             <button
                 className="control-btn play-btn"
@@ -33,7 +34,7 @@ const PlayerControls = memo(function PlayerControls({
                 aria-label="Next track"
                 disabled={disabled || !canGoNext}
             >
-                ⏭
+                <SkipForward />
             </button>
         </div>
     );

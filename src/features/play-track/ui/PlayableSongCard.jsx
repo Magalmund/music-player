@@ -1,5 +1,6 @@
 import {SongCard} from "@/entities/song/index.js";
 import {usePlayTrack} from "@/features/play-track/model/usePlayTrack.js";
+import {Play, Pause} from 'lucide-react'
 
 const PlayableSongCard = ({song, index}) => {
     const {isActive, isCurrentTrackPlaying, handlePlayTrack} = usePlayTrack(song);
@@ -10,7 +11,7 @@ const PlayableSongCard = ({song, index}) => {
             index={index}
             isActive={isActive}
             statusLabel={isCurrentTrackPlaying ? "Live" : isActive ? "Paused" : "Ready"}
-            actionIcon={isCurrentTrackPlaying ? "⏸" : "▶"}
+            actionIcon={isCurrentTrackPlaying ? <Pause/> : <Play/>}
             onPlay={handlePlayTrack}
         />
     );
