@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLibrary } from "@/entities/playlist/index.js";
 import {validPlaylistName} from "@/features/create-playlist/model/validPlaylistName.js";
+import styles from "./CreatePlaylist.module.css";
 
 const CreatePlaylist = () => {
     const [name, setName] = useState("");
@@ -18,19 +19,19 @@ const CreatePlaylist = () => {
     };
 
     return (
-        <div className="create-playlist">
+        <div className={styles.root}>
             <h3>Create New Playlist</h3>
-            <p className="section-copy">Build a custom set, then search and add tracks directly into it.</p>
+            <p className={styles.copy}>Build a custom set, then search and add tracks directly into it.</p>
 
-            <div className="playlist-form">
+            <div className={styles.form}>
                 <input
                     type="text"
                     placeholder="Midnight Drive"
-                    className="playlist-input"
+                    className={styles.input}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <button className="create-btn" onClick={handleSubmit}>Create</button>
+                <button className={styles.button} onClick={handleSubmit}>Create</button>
             </div>
         </div>
     );

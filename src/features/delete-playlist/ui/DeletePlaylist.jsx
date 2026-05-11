@@ -1,5 +1,6 @@
 import React from "react";
 import { useLibrary } from "@/entities/playlist/index.js";
+import styles from "./DeletePlaylist.module.css";
 
 const DeletePlaylist = ({ playlist }) => {
     const { deletePlaylist } = useLibrary();
@@ -11,7 +12,7 @@ const DeletePlaylist = ({ playlist }) => {
     };
 
     return (
-        <button className="delete-playlist-btn" onClick={handleDelete}>
+        <button className={styles.button} onClick={handleDelete}>
             Delete
         </button>
     );

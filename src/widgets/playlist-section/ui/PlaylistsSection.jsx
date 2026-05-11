@@ -5,25 +5,26 @@ import { CreatePlaylist } from "@/features/create-playlist/index.js";
 import { AddTrackToPlaylist } from "@/features/add-track-to-playlist/index.js";
 import { DeletePlaylist } from "@/features/delete-playlist/index.js";
 import {PlayableTrackRow} from "@/features/play-track/index.js";
+import styles from "./PlaylistsSection.module.css";
 
 const PlaylistsSection = () => {
     const { playlists } = useLibrary();
 
     return (
-        <div className="playlists">
-            <div className="section-heading">
+        <div>
+            <div className={styles.heading}>
                 <div>
-                    <p className="section-kicker">Collections</p>
+                    <p className={styles.kicker}>Collections</p>
                     <h2>Playlist Studio</h2>
                 </div>
-                <span className="section-badge">{playlists.length} lists</span>
+                <span className={styles.badge}>{playlists.length} lists</span>
             </div>
 
             <CreatePlaylist />
 
-            <div className="playlists-list">
+            <div className={styles.list}>
                 {playlists.length === 0 ? (
-                    <p className="empty-message">No playlists created yet</p>
+                    <p className={styles.emptyMessage}>No playlists created yet</p>
                 ) : (
                     playlists.map((playlist) => (
                         <PlaylistCard
@@ -33,9 +34,9 @@ const PlaylistsSection = () => {
                         >
                             <AddTrackToPlaylist playlist={playlist} />
 
-                            <div className="playlist-songs">
+                            <div className={styles.songs}>
                                 {playlist.songs.length === 0 ? (
-                                    <p className="empty-playlist">No songs in this playlist</p>
+                                    <p className={styles.emptyPlaylist}>No songs in this playlist</p>
                                 ) : (
                                     playlist.songs.map((track, index) => (
                                         <PlayableTrackRow

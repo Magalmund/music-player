@@ -1,21 +1,22 @@
 import React, {memo} from 'react';
+import styles from "./SongCard.module.css";
 
 const SongCard = memo(function SongCard ({song, index, isActive, statusLabel, actionIcon, onPlay}) {
     return (
         <div
-            className={`song-card ${isActive ? "active" : ""}`}
+            className={`${styles.card} ${isActive ? styles.active : ""}`}
             onClick={onPlay}
         >
-            <div className="song-card-top">
-                <span className="song-index">{String(index + 1).padStart(2, "0")}</span>
-                <span className="song-status">{statusLabel}</span>
+            <div className={styles.top}>
+                <span className={styles.index}>{String(index + 1).padStart(2, "0")}</span>
+                <span className={styles.status}>{statusLabel}</span>
             </div>
-            <div className="song-info">
-                <h3 className="song-title">{song.title}</h3>
-                <p className="song-artist">{song.artist}</p>
-                <span className="song-duration">{song.duration}</span>
+            <div className={styles.info}>
+                <h3 className={styles.title}>{song.title}</h3>
+                <p className={styles.artist}>{song.artist}</p>
+                <span className={styles.duration}>{song.duration}</span>
             </div>
-            <div className="play-button">
+            <div className={styles.playButton}>
                 {actionIcon}
             </div>
         </div>

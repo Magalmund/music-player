@@ -1,19 +1,20 @@
 import React, { memo } from "react";
+import styles from "./TrackRow.module.css";
 
 const TrackRow = memo(function TrackRow({ track, isActive = false, onPlay, positionLabel }) {
     return (
         <div
-            className={`playlist-song ${isActive ? "active" : ""}`}
+            className={`${styles.row} ${isActive ? styles.active : ""}`}
             onClick={onPlay}
         >
-            <span className="playlist-song-index">{positionLabel}</span>
+            <span className={styles.index}>{positionLabel}</span>
 
-            <div className="song-info">
-                <span className="song-title">{track.title}</span>
-                <span className="song-artist">{track.artist}</span>
+            <div className={styles.info}>
+                <span>{track.title}</span>
+                <span className={styles.artist}>{track.artist}</span>
             </div>
 
-            <span className="song-duration">{track.duration}</span>
+            <span className={styles.duration}>{track.duration}</span>
         </div>
     );
 });

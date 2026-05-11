@@ -1,5 +1,6 @@
 import React, {memo} from 'react';
 import {SkipBack, SkipForward} from "lucide-react";
+import styles from "./PlayerControls.module.css";
 
 const PlayerControls = memo(function PlayerControls({
                                                         isPlaying,
@@ -12,9 +13,9 @@ const PlayerControls = memo(function PlayerControls({
                                                         canGoPrev,
 }) {
     return (
-        <div className="controls">
+        <div className={styles.controls}>
             <button
-                className="control-btn"
+                className={styles.button}
                 onClick={onPrev}
                 aria-label="Previous track"
                 disabled={disabled || !canGoPrev}
@@ -22,14 +23,14 @@ const PlayerControls = memo(function PlayerControls({
                 <SkipBack />
             </button>
             <button
-                className="control-btn play-btn"
+                className={`${styles.button} ${styles.playButton}`}
                 onClick={onTogglePlay}
                 aria-label={isPlaying ? "Pause track" : "Play track"}
             >
                 {actionIcon}
             </button>
             <button
-                className="control-btn"
+                className={styles.button}
                 onClick={onNext}
                 aria-label="Next track"
                 disabled={disabled || !canGoNext}
@@ -41,5 +42,4 @@ const PlayerControls = memo(function PlayerControls({
 });
 
 export default PlayerControls;
-
 

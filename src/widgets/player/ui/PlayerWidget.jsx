@@ -4,6 +4,7 @@ import {getSongsCount} from "@/entities/song/index.js"
 import {PlayerProgress, PlayerVolume, usePlayback} from "@/entities/player/index.js";
 import {useAudioPlayer} from "@/entities/player/model/useAudioPlayer.js";
 import {PlaybackControls} from "@/features/player-controls/index.js";
+import styles from "./PlayerWidget.module.css";
 
 const PlayerWidget = () => {
 
@@ -23,8 +24,8 @@ const PlayerWidget = () => {
 
     if(!currentTrack) {
         return (
-            <div className="music-player">
-                <p className="empty-message">
+            <div className={styles.player}>
+                <p className={styles.emptyMessage}>
                     No track selected
                 </p>
             </div>
@@ -32,7 +33,7 @@ const PlayerWidget = () => {
     }
 
     return (
-        <div className="music-player">
+        <div className={styles.player}>
             <audio ref={audioRef} src={currentTrack?.url} preload="metadata"/>
 
             <TrackInfo

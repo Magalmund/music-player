@@ -1,19 +1,20 @@
 import React, {memo} from 'react';
+import styles from "./PlayerVolume.module.css";
 
 const PlayerVolume = memo(function PlayerVolume({volume, onChange}) {
     return (
-        <div className="volume-container">
-            <span className="volume-icon">Volume</span>
+        <div className={styles.container}>
+            <span className={styles.icon}>Volume</span>
             <input
                 type="range"
                 min="0"
                 max="1"
                 step="0.1"
-                className="volume-bar"
+                className={styles.bar}
                 value={volume}
                 onChange={(e) => onChange(Number(e.target.value))}
             />
-            <span className="volume-value">{Math.round((volume || 0) * 100)}%</span>
+            <span className={styles.value}>{Math.round((volume || 0) * 100)}%</span>
         </div>
     );
 });
